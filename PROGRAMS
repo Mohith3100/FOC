@@ -198,3 +198,794 @@ int main() {
 
 
 
+#include <stdio.h>
+
+int main() {
+    int n, sum = 0;
+
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++) {
+        if (i % 2 != 0) {  // Check if 'i' is odd
+            sum += i;
+        }
+    }
+
+    printf("The sum of the odd number series is: %d\n", sum);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int n, sum = 0;
+
+    printf("Enter the value of N: ");
+    scanf("%d", &n);
+
+    int sign = 1;  // This variable keeps track of whether to add or subtract
+    for (int i = 1; i <= n; i++) {
+        sum += sign * i;  // Add or subtract i based on the sign
+        sign *= -1;       // Toggle the sign for the next term
+    }
+
+    printf("The sum of the series is: %d\n", sum);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int n, sum = 0;
+
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++) {
+        sum += (i * 10 + 2);
+    }
+
+    printf("The sum of the series is: %d\n", sum);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int n, sum = 0;
+
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++) {
+        sum += (2 * i * i);
+    }
+
+    printf("The sum of the series is: %d\n", sum);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int n, sum = 0;
+
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++) {
+        sum += (i * 11);
+    }
+
+    printf("The sum of the series is: %d\n", sum);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int n, sum = 0;
+
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i += 2) {
+        sum += i * i;
+    }
+
+    printf("The sum of the squares of odd numbers is: %d\n", sum);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int n, sum = 0;
+
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++) {
+        sum += i * i * i;
+    }
+
+    printf("The sum of the cubes of the first %d numbers is: %d\n", n, sum);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int n;
+    unsigned long long factorial = 1;
+
+    printf("Enter a positive integer: ");
+    scanf("%d", &n);
+
+    if (n < 0) {
+        printf("Factorial is not defined for negative numbers.\n");
+    } else {
+        for (int i = 1; i <= n; i++) {
+            factorial *= i;
+        }
+        printf("Factorial of %d is: %llu\n", n, factorial);
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int number, originalNumber, remainder, result = 0, n = 0;
+
+    printf("Enter an integer: ");
+    scanf("%d", &number);
+
+    originalNumber = number;
+
+    // Count the number of digits in the number
+    while (originalNumber != 0) {
+        originalNumber /= 10;
+        n++;
+    }
+
+    originalNumber = number;
+
+    // Calculate the result using the sum of the nth powers of its digits
+    while (originalNumber != 0) {
+        remainder = originalNumber % 10;
+        result += pow(remainder, n);
+        originalNumber /= 10;
+    }
+
+    if (result == number) {
+        printf("%d is an Armstrong number.\n", number);
+    } else {
+        printf("%d is not an Armstrong number.\n", number);
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int n, num;
+    double sum = 0.0;
+
+    printf("Enter the number of values: ");
+    scanf("%d", &n);
+
+    printf("Enter %d numbers:\n", n);
+
+    for (int i = 1; i <= n; i++) {
+        printf("Enter number %d: ", i);
+        scanf("%d", &num);
+        sum += num;
+    }
+
+    double average = sum / n;
+
+    printf("Sum of the %d numbers is: %.2f\n", n, sum);
+    printf("Average of the %d numbers is: %.2f\n", n, average);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int number;
+
+    printf("Enter an integer: ");
+    scanf("%d", &number);
+
+    printf("Digits of %d are: ", number);
+
+    int temp = number;
+    int digit;
+    int isNegative = 0;
+
+    if (temp < 0) {
+        isNegative = 1;
+        temp = -temp;  // Convert negative number to positive for processing
+    }
+
+    // Extract and print digits
+    while (temp > 0) {
+        digit = temp % 10;
+        printf("%d ", digit);
+        temp /= 10;
+    }
+
+    if (isNegative) {
+        printf("(Note: The number was negative)");
+    }
+
+    printf("\n");
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int number;
+
+    printf("Enter an integer: ");
+    scanf("%d", &number);
+
+    int temp = number;
+    int digit;
+    int sum = 0;
+
+    // Calculate the sum of digits
+    while (temp != 0) {
+        digit = temp % 10;
+        sum += digit;
+        temp /= 10;
+    }
+
+    printf("Sum of the digits of %d is: %d\n", number, sum);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int number;
+
+    printf("Enter an integer: ");
+    scanf("%d", &number);
+
+    int temp = number;
+    int reversedNumber = 0;
+    int digit;
+
+    // Reverse the digits
+    while (temp != 0) {
+        digit = temp % 10;
+        reversedNumber = reversedNumber * 10 + digit;
+        temp /= 10;
+    }
+
+    printf("Reversed number: %d\n", reversedNumber);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int num;
+
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+
+    if (num % 2 == 0) {
+        printf("%d is even.\n", num);
+    } else {
+        printf("%d is odd.\n", num);
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int num;
+
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+
+    if (num % 2 == 0) {
+        printf("%d is even.\n", num);
+    } else {
+        printf("%d is odd.\n", num);
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int a, b, temp;
+
+    printf("Enter two integers:\n");
+    scanf("%d %d", &a, &b);
+
+    temp = a;
+    a = b;
+    b = temp;
+
+    printf("After swapping:\n");
+    printf("a = %d\n", a);
+    printf("b = %d\n", b);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int a, b;
+
+    printf("Enter two integers:\n");
+    scanf("%d %d", &a, &b);
+
+    a = a + b;
+    b = a - b;
+    a = a - b;
+
+    printf("After swapping:\n");
+    printf("a = %d\n", a);
+    printf("b = %d\n", b);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int a, b, c;
+
+    printf("Enter three integers:\n");
+    scanf("%d %d %d", &a, &b, &c);
+
+    int temp = a;
+    a = b;
+    b = c;
+    c = temp;
+
+    printf("After swapping:\n");
+    printf("a = %d\n", a);
+    printf("b = %d\n", b);
+    printf("c = %d\n", c);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int a, b;
+
+    printf("Enter two integers:\n");
+    scanf("%d %d", &a, &b);
+
+    if (a > b) {
+        printf("%d is the biggest.\n", a);
+    } else {
+        printf("%d is the biggest.\n", b);
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int n, num, max;
+
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+
+    printf("Enter %d integers:\n", n);
+    scanf("%d", &max);
+
+    for (int i = 1; i < n; i++) {
+        scanf("%d", &num);
+        if (num > max) {
+            max = num;
+        }
+    }
+
+    printf("The biggest number is: %d\n", max);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double x, term, sum = 0.0;
+    int n;
+
+    printf("Enter the value of x in radians: ");
+    scanf("%lf", &x);
+
+    printf("Enter the number of terms (n): ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++) {
+        term = pow(x, 2 * i - 1) / tgamma(2 * i);
+        if (i % 2 == 0) {
+            term *= -1; // Alternate terms have a negative sign
+        }
+        sum += term;
+    }
+
+    printf("sin(%lf) = %lf\n", x, sum);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double x, term, sum = 1.0;
+    int n;
+
+    printf("Enter the value of x in radians: ");
+    scanf("%lf", &x);
+
+    printf("Enter the number of terms (n): ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++) {
+        term = pow(x, 2 * i) / tgamma(2 * i);
+        if (i % 2 != 0) {
+            term *= -1; // Alternate terms have a negative sign
+        }
+        sum += term;
+    }
+
+    printf("cos(%lf) = %lf\n", x, sum);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double x, term, sum = 1.0;
+    int n;
+
+    printf("Enter the value of x: ");
+    scanf("%lf", &x);
+
+    printf("Enter the number of terms (n): ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++) {
+        term = pow(x, i) / tgamma(i + 1);
+        sum += term;
+    }
+
+    printf("e^(%lf) = %lf\n", x, sum);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int n, search, found = 0;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    int array[n];
+
+    printf("Enter %d elements:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &array[i]);
+    }
+
+    printf("Enter the element to search for: ");
+    scanf("%d", &search);
+
+    for (int i = 0; i < n; i++) {
+        if (array[i] == search) {
+            printf("Element found at index %d.\n", i);
+            found = 1;
+            break;
+        }
+    }
+
+    if (!found) {
+        printf("Element not found in the array.\n");
+    }
+
+    return 0;
+}
