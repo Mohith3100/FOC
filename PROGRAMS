@@ -1842,7 +1842,7 @@ int main() {
 
 
 
-
+exp no 50
 #include <stdio.h>
 
 int main() {
